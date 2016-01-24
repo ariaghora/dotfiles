@@ -18,6 +18,13 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'lervag/vimtex'
+Plugin 'godlygeek/tabular'
+Plugin 'myhere/vim-nodejs-complete'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'tommcdo/vim-exchange'
 
 autocmd! bufwritepost .vimrc source %
 
@@ -50,6 +57,18 @@ let g:jedi#popup_select_first = 0
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
+" ultisnips
+let g:UltiSnipsExpandTrigger="<c-l>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" vim-exchange
+let g:exchange_no_mappings=1
+nmap cx <Plug>(Exchange)
+vmap X <Plug>(Exchange)
+nmap cxc <Plug>(ExchangeClear)
+nmap cxx <Plug>(ExchangeLine)
+
 " Others
 noremap ; :
 
@@ -59,7 +78,7 @@ imap <C-k> <C-y>,
 syntax on
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set background=dark
-set gfn=Monaco:h12
+set gfn=Monaco:h11
 set guioptions-=r
 set tabstop=4
 set shiftwidth=4
@@ -71,6 +90,7 @@ set hlsearch
 set incsearch
 set showmatch
 set number
+set ruler
 set nocompatible
 set clipboard=unnamed
 set guioptions= 
